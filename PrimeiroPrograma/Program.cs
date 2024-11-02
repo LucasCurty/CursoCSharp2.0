@@ -14,7 +14,10 @@ namespace PrimeiroPrograma
             //conferirNegativo();
             //estruturaWhile();
             //estruturaFor();
-            areaTriangulo();
+            //areaTriangulo();
+            //exercicioPessoa();
+            //produtos();
+            notasAluno();
         }
         static void conferirSePar(int numero)
         {
@@ -153,11 +156,8 @@ namespace PrimeiroPrograma
             y.B = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
             y.C = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
 
-            double p = (x.A + x.B + x.C) / 2.0;
-            double areaX = Math.Sqrt(p * (p - x.A) * (p - x.B) * (p - x.C));
-
-            p = (y.A + y.B + y.C) / 2.0;
-            double areaY = Math.Sqrt(p * (p - y.A) * (p - y.B) * (p - y.C));
+            double areaX = x.CalcularArea();
+            double areaY = y.CalcularArea();
 
             Console.WriteLine($"Area de X = {areaX}");
             Console.WriteLine($"Area de Y = {areaY}");
@@ -169,7 +169,63 @@ namespace PrimeiroPrograma
             else
             {
                 Console.WriteLine("Mario area: Y");
-                }
+            }
+
+        }
+
+        static void exercicioPessoa()
+        {
+            Pessoa minhaPessoa;
+            minhaPessoa = new Pessoa();
+
+
+            Console.WriteLine("Insira seu nome");
+            minhaPessoa.Nome = Console.ReadLine();
+            Console.WriteLine("Insira sua idade");
+            minhaPessoa.Idade = int.Parse(Console.ReadLine());
+
+            Console.WriteLine($"Seu nome é {minhaPessoa.Nome} e sua idade é {minhaPessoa.Idade}");
+
+        }
+
+        static void produtos()
+        {
+            Produto produto = new Produto();
+
+            Console.WriteLine("Entre com os dados do produto");
+            Console.Write("Nome: ");
+            produto.Nome = Console.ReadLine();
+            Console.Write("Preço: ");
+            produto.Preco = double.Parse(Console.ReadLine());
+            Console.Write("Quantidade no estoque: ");
+            produto.Quantidade = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Dados do produto: " + produto);
+            
+            Console.WriteLine();
+            Console.WriteLine("Digite o numero de produtos a ser adicionado ao estoque");
+            int quantidade = int.Parse(Console.ReadLine());
+            produto.AdicionarProdutos(quantidade);
+            Console.WriteLine("Dados atualizados: " + produto);
+
+            Console.WriteLine("Digite o numero de produtos a ser removidos do estoque");
+            quantidade = int.Parse(Console.ReadLine());
+            produto.RemoverProduto(quantidade);
+            Console.WriteLine("Dados atualizados: " + produto);
+
+        }
+
+        static void notasAluno()
+        {
+            Aluno aluno = new Aluno();
+
+            Console.Write("Nome do Aluno: ");
+            aluno.nome = Console.ReadLine();
+            Console.WriteLine("Digite as tres notas do aluno " + aluno.nome);
+            aluno.notaA = double.Parse(Console.ReadLine());
+            aluno.notaB = double.Parse(Console.ReadLine());
+            aluno.notaC = double.Parse(Console.ReadLine());
+            aluno.Resultado();
 
         }
     }
