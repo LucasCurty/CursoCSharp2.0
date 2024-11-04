@@ -16,8 +16,8 @@ namespace PrimeiroPrograma
             //estruturaFor();
             //areaTriangulo();
             //exercicioPessoa();
-            //produtos();
-            notasAluno();
+            produtos();
+            //notasAluno();
         }
         static void conferirSePar(int numero)
         {
@@ -190,21 +190,24 @@ namespace PrimeiroPrograma
 
         static void produtos()
         {
-            Produto produto = new Produto();
 
             Console.WriteLine("Entre com os dados do produto");
             Console.Write("Nome: ");
-            produto.Nome = Console.ReadLine();
+            string nome = Console.ReadLine();
             Console.Write("Preço: ");
-            produto.Preco = double.Parse(Console.ReadLine());
+            double preco = double.Parse(Console.ReadLine());
             Console.Write("Quantidade no estoque: ");
-            produto.Quantidade = int.Parse(Console.ReadLine());
+            int quantidade = int.Parse(Console.ReadLine());
+
+            Produto produto = new Produto(nome, preco, quantidade);
+
+            //produto.Nome = "TV4K";
 
             Console.WriteLine("Dados do produto: " + produto);
             
             Console.WriteLine();
             Console.WriteLine("Digite o numero de produtos a ser adicionado ao estoque");
-            int quantidade = int.Parse(Console.ReadLine());
+            quantidade = int.Parse(Console.ReadLine());
             produto.AdicionarProdutos(quantidade);
             Console.WriteLine("Dados atualizados: " + produto);
 

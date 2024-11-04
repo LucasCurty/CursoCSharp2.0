@@ -4,30 +4,58 @@ namespace PrimeiroPrograma
 {
     internal class Produto
     {
-        public string Nome;
-        public double Preco;
-        public int Quantidade;
+        private string _nome;
+        private double _preco;
+        private int _quantidade;
 
+        public Produto(string nome, double preco, int quantidade)
+        {
+            _nome = nome;
+            _preco = preco;
+            _quantidade = quantidade;
+        }
+
+        public string Nome
+        {
+            get { return _nome; }
+            set
+            {
+                if (value != null && value.Length > 1)
+                {
+                    _nome = value;
+                }
+            }
+        }
+        public double Preco
+        {
+            get { return _preco; }
+        }
+
+        public int Quantidade
+        {
+            get { return _quantidade; }
+
+        }
 
         public double ValorTotalEmStoque()
         {
-            return Preco * Quantidade;
+            return _preco * _quantidade;
         }
         public void AdicionarProdutos(int valor)
         {
-            Quantidade += valor;
+            _quantidade += valor;
         }
         public void RemoverProduto(int valor)
         {
-            Quantidade -= valor;
+            _quantidade -= valor;
         }
         public override string ToString()
         {
-            return Nome
+            return _nome
                 + ", $"
-                + Preco.ToString("F2", CultureInfo.InvariantCulture)
+                + _preco.ToString("F2", CultureInfo.InvariantCulture)
                 + ", "
-                + Quantidade
+                + _quantidade
                 + " unidades, Total: $ "
                 + ValorTotalEmStoque().ToString("F2", CultureInfo.InvariantCulture);
         }
