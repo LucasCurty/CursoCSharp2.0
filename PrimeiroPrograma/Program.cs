@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Globalization;
+using System.Reflection.Metadata;
 
 namespace PrimeiroPrograma
 {
@@ -16,11 +17,12 @@ namespace PrimeiroPrograma
             //estruturaFor();
             //areaTriangulo();
             //exercicioPessoa();
-            produtos();
+            //produtos();
             //notasAluno();
             //retangulo();
             //salario();
             //Pi();
+            banco();
         }
         static void conferirSePar(int numero)
         {
@@ -297,6 +299,25 @@ namespace PrimeiroPrograma
             Console.WriteLine($"Volume: {volume.ToString("F2", CultureInfo.InvariantCulture)}");
             Console.WriteLine($"Valor de PI: {Calculadora.Pi.ToString("F2", CultureInfo.InvariantCulture)}");
 
+        }
+
+        static void banco() {
+
+            Console.Write("Entre com o numero da conta: ");
+            int numeroConta = int.Parse(Console.ReadLine());
+            Console.Write("Entre com o titular da conta: ");
+            string nome = Console.ReadLine();
+            Console.Write("Haverá deposito inicial (s/n)? ");
+            char yesOrNo = Console.ReadLine();
+            
+            double deposito
+            if( yesOrNo != null && yesOrNo === 's') {
+                Console.Write("Entre o valor de depósito inicial: ");
+                deposito = double.Parse(Console.ReadLine());
+            }
+
+            Conta conta = new Conta(nome, numeroConta, deposito);
+            
         }
     }
 
