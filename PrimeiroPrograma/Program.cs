@@ -18,6 +18,9 @@ namespace PrimeiroPrograma
             //exercicioPessoa();
             produtos();
             //notasAluno();
+            //retangulo();
+            //salario();
+            //Pi();
         }
         static void conferirSePar(int numero)
         {
@@ -175,16 +178,31 @@ namespace PrimeiroPrograma
 
         static void exercicioPessoa()
         {
-            Pessoa minhaPessoa;
-            minhaPessoa = new Pessoa();
+            Pessoa pessoa1 = new Pessoa();
+            Pessoa pessoa2 = new Pessoa();
+
+            Console.WriteLine("Dados da primeira pessoa:");
+            Console.Write("Nome: ");
+            pessoa1.Nome = Console.ReadLine();
+            Console.Write("Idade: ");
+            pessoa1.Idade = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Dados da Segunda pessoa:");
+            Console.Write("Nome: ");
+            pessoa2.Nome = Console.ReadLine();
+            Console.Write("Idade: ");
+            pessoa2.Idade = int.Parse(Console.ReadLine());
+
+            if (pessoa1.Idade > pessoa2.Idade) {
+                Console.WriteLine($"Pessoa mais velha: {pessoa1.Nome}");
+            }
+            else
+            {
+                Console.WriteLine($"Pessoa mais velha: {pessoa2.Nome}");
+
+            }
 
 
-            Console.WriteLine("Insira seu nome");
-            minhaPessoa.Nome = Console.ReadLine();
-            Console.WriteLine("Insira sua idade");
-            minhaPessoa.Idade = int.Parse(Console.ReadLine());
-
-            Console.WriteLine($"Seu nome é {minhaPessoa.Nome} e sua idade é {minhaPessoa.Idade}");
 
         }
 
@@ -229,6 +247,55 @@ namespace PrimeiroPrograma
             aluno.notaB = double.Parse(Console.ReadLine());
             aluno.notaC = double.Parse(Console.ReadLine());
             aluno.Resultado();
+
+        }
+
+        static void retangulo()
+        {
+            Retangulo retangulo = new Retangulo();
+
+            Console.WriteLine("Entre a largura e altura do retângulo: ");
+            Console.Write("Altura: ");
+            retangulo.altura = double.Parse(Console.ReadLine());
+            Console.Write("Largura: ");
+            retangulo.largura= double.Parse(Console.ReadLine());
+
+            Console.WriteLine($"AREA = {retangulo.CalculaArea().ToString("F2", CultureInfo.InvariantCulture)}");
+            Console.WriteLine($"PERIMETRO = {retangulo.CalculaPerimetro().ToString("F2", CultureInfo.InvariantCulture)}");
+            Console.WriteLine($"DIAGONAL = {retangulo.CalculaDiagonal().ToString("F2", CultureInfo.InvariantCulture)}");
+
+        }
+
+        static void salario()
+        {
+            Funcionario funcionario = new Funcionario();
+
+            Console.Write("Nome: ");
+            funcionario.Name = Console.ReadLine();
+            Console.Write("Salário bruto: ");
+            funcionario.salarioBruto = double.Parse(Console.ReadLine());
+            Console.Write("Imposto: ");
+            funcionario.imposto= double.Parse(Console.ReadLine());
+
+
+            Console.WriteLine($"Funcionário {funcionario.Name}, $ {funcionario.SalarioLiquido().ToString("F2", CultureInfo.InvariantCulture)}");
+            Console.Write("Digite a porcentagem para aumentar o salário: ");
+            double porcentagem = double.Parse(Console.ReadLine());
+
+            Console.WriteLine($"Dados atualizados: {funcionario.Name}, $ {funcionario.AumentarSalario(porcentagem).ToString("F2", CultureInfo.InvariantCulture)}");
+        }
+
+        static void Pi()
+        {
+            Console.Write("Entre o valor do raio: ");
+            double raio = double.Parse(Console.ReadLine());
+
+            double circ = Calculadora.Circunferencia(raio);
+            double volume = Calculadora.Volume(raio);
+
+            Console.WriteLine($"Circunferência: {circ.ToString("F2", CultureInfo.InvariantCulture)}");
+            Console.WriteLine($"Volume: {volume.ToString("F2", CultureInfo.InvariantCulture)}");
+            Console.WriteLine($"Valor de PI: {Calculadora.Pi.ToString("F2", CultureInfo.InvariantCulture)}");
 
         }
     }
