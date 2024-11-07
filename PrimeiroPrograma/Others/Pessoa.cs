@@ -1,6 +1,4 @@
-﻿
-
-namespace PrimeiroPrograma
+﻿namespace PrimeiroPrograma.Others
 {
     class Pessoa
     {

@@ -2,28 +2,28 @@
 using System.Globalization;
 using System.Reflection.Metadata;
 
-namespace PrimeiroPrograma
+namespace PrimeiroPrograma.Others
 {
     class Program
     {
-        static void Main(string[] args)
-        {
-            //basicoVariaveis();
-            //conferirSePar(5);
-            //leituraEntrada();
-            //Maior(3, 5, 7);
-            //conferirNegativo();
-            //estruturaWhile();
-            //estruturaFor();
-            //areaTriangulo();
-            //exercicioPessoa();
-            //produtos();
-            //notasAluno();
-            //retangulo();
-            //salario();
-            //Pi();
-            banco();
-        }
+        //static void Main(string[] args)
+        //{
+        //    //basicoVariaveis();
+        //    //conferirSePar(5);
+        //    //leituraEntrada();
+        //    //Maior(3, 5, 7);
+        //    //conferirNegativo();
+        //    //estruturaWhile();
+        //    //estruturaFor();
+        //    //areaTriangulo();
+        //    //exercicioPessoa();
+        //    //produtos();
+        //    //notasAluno();
+        //    //retangulo();
+        //    //salario();
+        //    //Pi();
+        //    //banco();
+        //}
         static void conferirSePar(int numero)
         {
 
@@ -195,7 +195,8 @@ namespace PrimeiroPrograma
             Console.Write("Idade: ");
             pessoa2.Idade = int.Parse(Console.ReadLine());
 
-            if (pessoa1.Idade > pessoa2.Idade) {
+            if (pessoa1.Idade > pessoa2.Idade)
+            {
                 Console.WriteLine($"Pessoa mais velha: {pessoa1.Nome}");
             }
             else
@@ -224,7 +225,7 @@ namespace PrimeiroPrograma
             //produto.Nome = "TV4K";
 
             Console.WriteLine("Dados do produto: " + produto);
-            
+
             Console.WriteLine();
             Console.WriteLine("Digite o numero de produtos a ser adicionado ao estoque");
             quantidade = int.Parse(Console.ReadLine());
@@ -260,7 +261,7 @@ namespace PrimeiroPrograma
             Console.Write("Altura: ");
             retangulo.altura = double.Parse(Console.ReadLine());
             Console.Write("Largura: ");
-            retangulo.largura= double.Parse(Console.ReadLine());
+            retangulo.largura = double.Parse(Console.ReadLine());
 
             Console.WriteLine($"AREA = {retangulo.CalculaArea().ToString("F2", CultureInfo.InvariantCulture)}");
             Console.WriteLine($"PERIMETRO = {retangulo.CalculaPerimetro().ToString("F2", CultureInfo.InvariantCulture)}");
@@ -277,7 +278,7 @@ namespace PrimeiroPrograma
             Console.Write("Salário bruto: ");
             funcionario.salarioBruto = double.Parse(Console.ReadLine());
             Console.Write("Imposto: ");
-            funcionario.imposto= double.Parse(Console.ReadLine());
+            funcionario.imposto = double.Parse(Console.ReadLine());
 
 
             Console.WriteLine($"Funcionário {funcionario.Name}, $ {funcionario.SalarioLiquido().ToString("F2", CultureInfo.InvariantCulture)}");
@@ -301,23 +302,10 @@ namespace PrimeiroPrograma
 
         }
 
-        static void banco() {
+        static void banco()
+        {
+            // arrummar exercicio! 
 
-            Console.Write("Entre com o numero da conta: ");
-            int numeroConta = int.Parse(Console.ReadLine());
-            Console.Write("Entre com o titular da conta: ");
-            string nome = Console.ReadLine();
-            Console.Write("Haverá deposito inicial (s/n)? ");
-            char yesOrNo = Console.ReadLine();
-            
-            double deposito
-            if( yesOrNo != null && yesOrNo === 's') {
-                Console.Write("Entre o valor de depósito inicial: ");
-                deposito = double.Parse(Console.ReadLine());
-            }
-
-            Conta conta = new Conta(nome, numeroConta, deposito);
-            
         }
     }
 

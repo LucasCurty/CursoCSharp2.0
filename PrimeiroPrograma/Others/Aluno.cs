@@ -1,6 +1,6 @@
 ﻿using System.Globalization;
 
-namespace PrimeiroPrograma
+namespace PrimeiroPrograma.Others
 {
     internal class Aluno
     {

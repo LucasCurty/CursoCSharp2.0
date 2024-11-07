@@ -1,5 +1,4 @@
-﻿
-namespace PrimeiroPrograma
+﻿namespace PrimeiroPrograma.Others
 {
     internal class Funcionario
     {
@@ -13,8 +12,8 @@ namespace PrimeiroPrograma
 
         public double AumentarSalario(double porcentagem)
         {
-            return SalarioLiquido() + ( salarioBruto * (porcentagem / 100));
+            return SalarioLiquido() + salarioBruto * (porcentagem / 100);
         }
-        
+
     }
 }

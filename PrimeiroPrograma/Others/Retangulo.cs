@@ -1,5 +1,4 @@
-﻿
-namespace PrimeiroPrograma
+﻿namespace PrimeiroPrograma.Others
 {
     internal class Retangulo
     {
@@ -7,7 +6,7 @@ namespace PrimeiroPrograma
 
         public double CalculaArea()
         {
-            return (largura * altura);
+            return largura * altura;
         }
 
         public double CalculaPerimetro()

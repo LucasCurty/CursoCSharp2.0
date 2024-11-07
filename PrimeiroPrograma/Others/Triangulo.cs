@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace PrimeiroPrograma
+namespace PrimeiroPrograma.Others
 {
     internal class Triangulo
     {
